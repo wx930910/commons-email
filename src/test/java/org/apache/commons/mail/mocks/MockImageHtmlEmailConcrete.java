@@ -16,39 +16,35 @@
  */
 package org.apache.commons.mail.mocks;
 
-import org.apache.commons.mail.ImageHtmlEmail;
-
 import java.io.IOException;
+
 import javax.mail.MessagingException;
 
-/**
- * Extension of the ImageHtmlEmail Class
- * (used to allow testing only)
- */
-public class MockImageHtmlEmailConcrete extends ImageHtmlEmail
-{
-    /**
-     * Retrieve the message content
-     * @return Message Content
-     */
-    public String getMsg()
-    {
-        try
-        {
-            return this.getPrimaryBodyPart().getContent().toString();
-        }
-        catch (final IOException | MessagingException msgE)
-        {
-            return null;
-        }
-    }
+import org.apache.commons.mail.ImageHtmlEmail;
 
-    /**
-     * Retrieve the html msg
-     * @return Message Content
-     */
-    public String getHtmlMsg()
-    {
-        return this.html;
-    }
+/**
+ * Extension of the ImageHtmlEmail Class (used to allow testing only)
+ */
+public class MockImageHtmlEmailConcrete extends ImageHtmlEmail {
+	/**
+	 * Retrieve the message content
+	 * 
+	 * @return Message Content
+	 */
+	public String getMsg() {
+		try {
+			return this.getPrimaryBodyPart().getContent().toString();
+		} catch (final IOException | MessagingException msgE) {
+			return null;
+		}
+	}
+
+	/**
+	 * Retrieve the html msg
+	 * 
+	 * @return Message Content
+	 */
+	public String getHtmlMsg() {
+		return this.html;
+	}
 }
